@@ -1,0 +1,62 @@
+﻿@model S2CDataMigration.Web.Models.UploadViewModel
+@{
+    ViewData["Title"] = "Upload File";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Upload Data(Input) File</div>
+            <div class="panel-body">
+                <form asp-controller="Upload" asp-action="UploadFile" method="post"
+                      enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                        <input type="file" class="form-control-file" accept="application/xml" name="file" id="file">
+                    </div>
+                    <span class="text-danger">@Model.Message</span>
+                    @*<input type="file" name="file" />*@
+                    <button type="submit" class="btn btn-primary">Upload File</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Previous Uploaded Files</div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">File Name</th>
+                            @*<th scope="col">Path</th>*@
+                            <th scope="col">Uploaded On</th>
+                            <th scope="col">Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Files.Count; i++)
+                        {
+                            <tr>
+                                <th scope="row">@(i + 1)</th>
+                                <td>@Model.Files[i].FileName</td>
+                                @*<td>@Model.Files[i].FilePath</td>*@
+                                <td>@Model.Files[i].UploadedOn</td>
+                                <td>
+                                    @Html.ActionLink("Download", "Download", "Upload", new { fileName = Model.Files[i].FileName })
+                                     | 
+                                    @Html.ActionLink("Migrate", "Index", "Migration", new { fileName = Model.Files[i].FileName })
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

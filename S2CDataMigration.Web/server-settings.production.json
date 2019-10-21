@@ -1,0 +1,23 @@
+﻿{
+  "token": {
+    "expireHours": 12
+  },
+  "multiTenant": false,
+  "webfarm": false,
+  "dbConnection": {
+    "generator": "data source= 192.168.100.199\\MSSQLSERVER2016;initial catalog=PhysicalFitnessGeneratorDb;persist security info=True;User Id=rxPhysicalFitness;Password=rxPhysicalFitness;MultipleActiveResultSets=True;App=EntityFramework",
+    "log": "data source= 192.168.100.199\\MSSQLSERVER2016;initial catalog=PhysicalFitnessLogDb;persist security info=True;User Id=rxPhysicalFitness;Password=rxPhysicalFitness;MultipleActiveResultSets=True;App=EntityFramework",
+    "cache": "data source= 192.168.100.199\\MSSQLSERVER2016;initial catalog=PhysicalFitnessDb;persist security info=True;User Id=rxPhysicalFitness;Password=rxPhysicalFitness;MultipleActiveResultSets=True;App=EntityFramework",
+    "admin": "",
+    "main": "data source= 192.168.100.199\\MSSQLSERVER2016;initial catalog=PhysicalFitnessDb;persist security info=True;User Id=rxPhysicalFitness;Password=rxPhysicalFitness;MultipleActiveResultSets=True;App=EntityFramework"
+  },
+  "recordLock": {
+    "expireMinutes": 10
+  },
+  "configuration": {
+    "cache": {
+      "days": 365,
+      "type": "sql"
+    }
+  }
+}

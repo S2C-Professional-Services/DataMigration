@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace S2CDataMigration.Models
+{
+    public partial class ObstetricsInvestigations
+    {
+        public Guid Id { get; set; }
+        public Guid PracticeId { get; set; }
+        public Guid PregnancyId { get; set; }
+        public string Type { get; set; }
+        public string Group { get; set; }
+        public string Name { get; set; }
+        public string Result { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public Guid? LocalId { get; set; }
+
+        public virtual Practices Practice { get; set; }
+        public virtual ObstetricsPregnancies Pregnancy { get; set; }
+    }
+}

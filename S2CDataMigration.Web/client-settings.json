@@ -1,0 +1,16 @@
+﻿[
+  {
+    "ABNNumber": "ASC1223123",
+    "ClientName": "S2C Services",
+    "MigrationType": "XML-TO-POSTGRESQL",
+    "ConnectionString": "User ID=postgres;Password=admin123;Host=localhost;Port=5432;Database=Test;Pooling=true;",
+    "IsAdmin": true
+  },
+  {
+    "ABNNumber": "C2C343432423",
+    "ClientName": "C2C Gentu",
+    "MigrationType": "XML-TO-POSTGRESQL",
+    "ConnectionString": "User ID=postgres;Password=admin123;Host=localhost;Port=5432;Database=Test;Pooling=true;",
+    "IsAdmin": false
+  }
+]

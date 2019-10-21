@@ -1,0 +1,20 @@
+{
+  "token": {
+    "expireHours": 12
+  },
+  "multiTenant": false,
+  "webfarm": false,
+  "dbConnection": {
+    "main": ""
+  },
+  "recordLock": {
+    "expireMinutes": 10
+  },
+  "configuration": {
+    "cache": {
+      "days": 365,
+      "type": "sql"
+    }
+  },
+  "versionNumber": "v1"
+}

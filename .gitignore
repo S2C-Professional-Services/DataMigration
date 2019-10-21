@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/MigrationService
+/.vs/S2CDataMigration
+/S2CDataMigration.Models/obj
+/S2CDataMigration.Models/bin/Debug
+/S2CDataMigration.Web/obj
+/S2CDataMigration.Web/bin/Debug/netcoreapp2.1
+/S2CDM.Models

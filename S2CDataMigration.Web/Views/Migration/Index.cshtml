@@ -1,0 +1,188 @@
+﻿@model S2CDataMigration.Web.Models.MigrationViewModel
+@{
+    ViewData["Title"] = "Migrate Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Migrate Data</h2>
+<div class="row">
+    <div class="col-md-8">
+        <h4>Data File: @Model.FileName</h4>
+    </div>
+    <div class="col-md-4">
+        @Html.ActionLink("Migrate", "MigrateData", "Migration", new { fileName = Model.FileName }, new { @class = "btn btn-primary pull-right" })
+    </div>
+</div>
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="row">
+        <div class="col-md-12">
+            <span class="alert-success">@Model.Message</span>
+        </div>
+    </div>
+}
+@*@Html.ActionLink("Read Data", "ReadData", "Migration", new { fileName = Model.FileName })*@
+
+@*<h4>Users Count: @(Model.MigrationUsers != null ? Model.MigrationUsers.Count:0)</h4>
+    <h4>Patients Count: @(Model.MigrationPatients != null ? Model.MigrationPatients.Count:0)</h4>
+    <h4>Contacts Count: @(Model.MigrationContacts != null ? Model.MigrationContacts.Count:0)</h4>
+    <h4>Account Holders Count: @(Model.MigrationAccountHolders != null ? Model.MigrationAccountHolders.Count:0)</h4>*@
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    @if (Model.MigrationUsers != null && Model.MigrationUsers.Count > 0)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingUsers">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#users" aria-expanded="true" aria-controls="collapseOne">
+                        Users(@(Model.MigrationUsers != null ? Model.MigrationUsers.Count : 0))
+                    </a>
+                </h4>
+            </div>
+            <div id="users" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingUsers">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ExternalId</th>
+                                <th>Salutation</th>
+                                <th>Firstname</th>
+                                <th>Surname</th>
+                                <th>IsSpecialist</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.MigrationUsers.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.MigrationUsers[i].ExternalId</td>
+                                    <td>@Model.MigrationUsers[i].Salutation</td>
+                                    <td>@Model.MigrationUsers[i].FirstName</td>
+                                    <td>@Model.MigrationUsers[i].Surname</td>
+                                    <td>@Model.MigrationUsers[i].IsSpecialist</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.MigrationPatients != null && Model.MigrationPatients.Count > 0)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingpatients">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#patients" aria-expanded="false" aria-controls="collapseTwo">
+                        Patients(@(Model.MigrationPatients != null ? Model.MigrationPatients.Count : 0))
+                    </a>
+                </h4>
+            </div>
+            <div id="patients" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingpatients">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ExternalId</th>
+                                <th>Salutation</th>
+                                <th>Firstname</th>
+                                <th>LastName</th>
+                                <th>MiddleName</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.MigrationPatients.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.MigrationPatients[i].ExternalId</td>
+                                    <td>@Model.MigrationPatients[i].Salutation</td>
+                                    <td>@Model.MigrationPatients[i].FirstName</td>
+                                    <td>@Model.MigrationPatients[i].LastName</td>
+                                    <td>@Model.MigrationPatients[i].MiddleName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.MigrationContacts != null && Model.MigrationContacts.Count > 0)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingcontacts">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#contacts" aria-expanded="false" aria-controls="collapseThree">
+                        Contacts(@(Model.MigrationContacts != null ? Model.MigrationContacts.Count : 0))
+                    </a>
+                </h4>
+            </div>
+            <div id="contacts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingcontacts">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ExternalId</th>
+                                <th>Salutation</th>
+                                <th>Firstname</th>
+                                <th>LastName</th>
+                                <th>MiddleName</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.MigrationContacts.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.MigrationContacts[i].ExternalId</td>
+                                    <td>@Model.MigrationContacts[i].Salutation</td>
+                                    <td>@Model.MigrationContacts[i].FirstName</td>
+                                    <td>@Model.MigrationContacts[i].LastName</td>
+                                    <td>@Model.MigrationContacts[i].MiddleName</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.MigrationAccountHolders != null && Model.MigrationAccountHolders.Count > 0)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingaccountHolders">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#accountHolders" aria-expanded="false" aria-controls="collapseThree">
+                        Account Holders(@(Model.MigrationAccountHolders != null ? Model.MigrationAccountHolders.Count : 0))
+                    </a>
+                </h4>
+            </div>
+            <div id="accountHolders" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingaccountHolders">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ExternalId</th>
+                                <th>Firstname</th>
+                                <th>LastName</th>
+                                <th>MedicareNum</th>
+                                <th>MedicareExpiryDate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.MigrationAccountHolders.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.MigrationAccountHolders[i].ExternalId</td>
+                                    <td>@Model.MigrationAccountHolders[i].FirstName</td>
+                                    <td>@Model.MigrationAccountHolders[i].LastName</td>
+                                    <td>@Model.MigrationAccountHolders[i].MedicareNum</td>
+                                    <td>@Model.MigrationAccountHolders[i].MedicareExpiryDate</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>
