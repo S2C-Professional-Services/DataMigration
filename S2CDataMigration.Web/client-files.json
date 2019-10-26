@@ -1,37 +1,3 @@
 [
-  {
-    "FileName": "ExportData_10152019123032.xml",
-    "ABNNumber": "ASC1223123",
-    "ClientName": "S2C Services",
-    "UploadedOn": "2019-10-15T12:30:51.2393334-04:00",
-    "FilePath": "D:\\Bhavik\\Projects\\S2C\\C2C\\S2CDataMigration\\S2CDataMigration\\S2CDataMigration.Web\\wwwroot\\datafiles\\ExportData_10152019123032.xml"
-  },
-  {
-    "FileName": "ExportData_10152019124032.xml",
-    "ABNNumber": "ASC1223123",
-    "ClientName": "S2C Services",
-    "UploadedOn": "2019-10-15T12:40:37.2469101-04:00",
-    "FilePath": "D:\\Bhavik\\Projects\\S2C\\C2C\\S2CDataMigration\\S2CDataMigration\\S2CDataMigration.Web\\wwwroot\\datafiles\\ExportData_10152019124032.xml"
-  },
-  {
-    "FileName": "ExportData_10152019125700.xml",
-    "ABNNumber": "ASC1223123",
-    "ClientName": "S2C Services",
-    "UploadedOn": "2019-10-15T12:57:14.7826444-04:00",
-    "FilePath": "D:\\Bhavik\\Projects\\S2C\\C2C\\S2CDataMigration\\S2CDataMigration\\S2CDataMigration.Web\\wwwroot\\datafiles\\ExportData_10152019125700.xml"
-  },
-  {
-    "FileName": "ExportData_10152019130203.xml",
-    "ABNNumber": "ASC1223123",
-    "ClientName": "S2C Services",
-    "UploadedOn": "2019-10-15T13:02:04.769658-04:00",
-    "FilePath": "D:\\Bhavik\\Projects\\S2C\\C2C\\S2CDataMigration\\S2CDataMigration\\S2CDataMigration.Web\\wwwroot\\datafiles\\ExportData_10152019130203.xml"
-  },
-  {
-    "FileName": "ExportData_10152019132150.xml",
-    "ABNNumber": "ASC1223123",
-    "ClientName": "S2C Services",
-    "UploadedOn": "2019-10-15T13:21:50.4700338-04:00",
-    "FilePath": "D:\\Bhavik\\Projects\\S2C\\C2C\\S2CDataMigration\\S2CDataMigration\\S2CDataMigration.Web\\wwwroot\\datafiles\\ExportData_10152019132150.xml"
-  }
+  
 ]

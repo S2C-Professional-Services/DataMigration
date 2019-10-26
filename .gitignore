@@ -3,7 +3,6 @@
 ################################################################################
 
 /packages
-/MigrationService
 /.vs/S2CDataMigration
 /S2CDataMigration.Models/obj
 /S2CDataMigration.Models/bin/Debug
