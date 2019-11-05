@@ -12,7 +12,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - S2C Data Migration Tool</title>
-
+    
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -24,11 +24,73 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+
+<body class="text-center" style="padding-top:90px;">
+    <div class="container body-content">
+        @*<h2>Login</h2>
+        <img src="~/images/s2c.png" width="141" height="100" alt="ASP.NET" class="img-responsive" />
+        <h4>Login with the client's ABN Number</h4>
+        <hr />*@
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form class="form-signin" asp-action="Index">
+                    <img class="mb-4" src="~/images/s2c.png" alt="" width="141" height="100" />
+                    <h1 class="h3 font-weight-normal" style="margin-top:7px;margin-bottom:15px;">Please sign in</h1>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="ABNNumber" class="sr-only">ABN Number</label>
+                        <input asp-for="ABNNumber" class="form-control" placeholder="ABN Number" required="" autofocus="" />
+                        <span asp-validation-for="ABNNumber" class="text-danger">@ViewData["Message"]</span>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <p class="text-muted" style="margin-top: 10px;margin-bottom: 5px;">&copy; 2019 - S2C Data Migration Tool</p>
+
+                    @*<label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <p class="mt-5 mb-3 text-muted">© 2017-2019</p>*@
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+</body>
+
+
+@*<body>
    
     <div class="container body-content">
         <h2>Login</h2>
-
+        <img src="~/images/s2c.png" alt="ASP.NET" class="img-responsive" />
         <h4>Login with the client's ABN Number</h4>
         <hr />
         <div class="row">
@@ -43,7 +105,6 @@
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Login" class="btn btn-primary" />
-                        @*<span class="text-danger">@ViewData["Message"]</span>*@
                     </div>
                 </form>
             </div>
@@ -75,7 +136,7 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
-</body>
+</body>*@
 </html>
 
 

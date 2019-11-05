@@ -1,6 +1,6 @@
 ﻿@model S2CDataMigration.Web.Models.HomeViewModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 @*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
@@ -53,12 +53,18 @@
             <span class="sr-only">Next</span>
         </a>
     </div>*@
-<div class="row">
-    <div class="col-md-12">
-        <h4>Client: @Model.ClientName</h4><h5>(@Model.ABNNumber)</h5>
-        
-    </div>
-</div>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading"> @Model.ClientName</h1>
+            <p class="lead text-muted">ABN Number:- @Model.ABNNumber</p>
+            <p>
+                <input class="btn btn-lg btn-primary my-2" type="button" onclick="location.href='@Url.Action("Index", "Upload")'" value="Upload File & Migrate Data"/>
+                @*<a asp-area="" class="btn btn-primary my-2" asp-controller="Upload" asp-action="Index">Upload File & Migrate Data</a>*@
+
+            </p>
+        </div>
+    </section>
+
 <div class="row">
     @*<div class="col-md-3">
         <h2>Application uses</h2>

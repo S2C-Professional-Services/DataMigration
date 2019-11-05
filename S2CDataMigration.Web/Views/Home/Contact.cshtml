@@ -1,17 +1,18 @@
-﻿@{
-    ViewData["Title"] = "Contact";
+﻿@model S2CDataMigration.Web.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Client Details";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<h2>@Model.ClientName</h2>
+<h3>ABN Number:- @Model.ABNNumber</h3>
 
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
+    @Model.ClientName<br />
+    (@Model.ABNNumber)<br />
     <abbr title="Phone">P:</abbr>
-    425.555.0100
+    @Model.PhoneNumber
 </address>
 
 <address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>Migration Type:</strong> <span>@Model.MigrationType</span><br />
+    <strong>Connection String:</strong> <span>@Model.ConnectionString</span>
 </address>

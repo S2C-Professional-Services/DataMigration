@@ -32,6 +32,8 @@ namespace S2CDataMigration.Web.Controllers
                         HttpContext.Session.SetString("ABNNumber", client.ABNNumber);
                         HttpContext.Session.SetString("ClientName", client.ClientName);
                         HttpContext.Session.SetString("ConnectionString", client.ConnectionString);
+                        HttpContext.Session.SetString("MigrationType", client.MigrationType);
+                        HttpContext.Session.SetString("PhoneNumber", client.PhoneNumber);
                         HttpContext.Session.SetString("IsAdmin", client.IsAdmin.ToString());
                         return RedirectToAction("Index", "Home");//new { ABNNumber = client.ABNNumber }
                     }

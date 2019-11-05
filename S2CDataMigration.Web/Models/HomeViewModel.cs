@@ -9,6 +9,9 @@ namespace S2CDataMigration.Web.Models
     {
         public string ABNNumber { get; set; }
         public string ClientName { get; set; }
+        public string MigrationType { get; set; }
+        public string PhoneNumber { get; set; }
+        public string ConnectionString { get; set; }
         public bool IsAdmin { get; set; }
     }
 }

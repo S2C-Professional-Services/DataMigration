@@ -11,6 +11,7 @@ namespace S2CDataMigration.Web.Models
         public string ClientName { get; set; }
         public string ConnectionString { get; set; }
         public string MigrationType { get; set; }
+        public string PhoneNumber { get; set; }
         public bool IsAdmin { get; set; }
     }
 }

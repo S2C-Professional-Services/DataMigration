@@ -14,21 +14,19 @@ namespace S2CDataMigration.Web.Controllers
         private string ABNNumber { get; set; }
         private bool IsAdmin { get; set; }
         private string ClientName { get; set; }
+        private string MigrationType { get; set; }
+        private string PhoneNumber { get; set; }
+        public string ConnectionString { get; set; }
         public HomeController()
         {
             //BSBNumber = HttpContext.Session.GetString("BSBNumber");
         }
         public IActionResult Index()
         {
-            ABNNumber = HttpContext.Session.GetString("ABNNumber");
-            ClientName = HttpContext.Session.GetString("ClientName");
-            IsAdmin = Convert.ToBoolean(HttpContext.Session.GetString("IsAdmin"));
+            SetProperties();
             if (!string.IsNullOrEmpty(ABNNumber))
             {
-                HomeViewModel homeViewModel = new HomeViewModel();
-                homeViewModel.ABNNumber = ABNNumber;
-                homeViewModel.ClientName = ClientName;
-                homeViewModel.IsAdmin = IsAdmin;
+                HomeViewModel homeViewModel = GenerateViewModel();
 
                 return View(homeViewModel);
             }
@@ -36,6 +34,28 @@ namespace S2CDataMigration.Web.Controllers
             {
                 return RedirectToAction("Index", "Login");
             }
+        }
+
+        private HomeViewModel GenerateViewModel()
+        {
+            HomeViewModel homeViewModel = new HomeViewModel();
+            homeViewModel.ABNNumber = ABNNumber;
+            homeViewModel.ClientName = ClientName;
+            homeViewModel.MigrationType = MigrationType;
+            homeViewModel.PhoneNumber = PhoneNumber;
+            homeViewModel.ConnectionString = ConnectionString;
+            homeViewModel.IsAdmin = IsAdmin;
+            return homeViewModel;
+        }
+
+        private void SetProperties()
+        {
+            ABNNumber = HttpContext.Session.GetString("ABNNumber");
+            ClientName = HttpContext.Session.GetString("ClientName");
+            MigrationType = HttpContext.Session.GetString("MigrationType");
+            PhoneNumber = HttpContext.Session.GetString("PhoneNumber");
+            ConnectionString = HttpContext.Session.GetString("ConnectionString");
+            IsAdmin = Convert.ToBoolean(HttpContext.Session.GetString("IsAdmin"));
         }
 
         public IActionResult About()
@@ -47,9 +67,16 @@ namespace S2CDataMigration.Web.Controllers
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            SetProperties();
+            if (!string.IsNullOrEmpty(ABNNumber))
+            {
+                HomeViewModel homeViewModel = GenerateViewModel();
+                return View("Contact",homeViewModel);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
         }
 
         public IActionResult Privacy()
